@@ -20,7 +20,7 @@ dashboard = true
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "teamsproxy"
+domain = "cybergate.lk"
 watch = true
 # I prefer to expose my containers explicitly
 exposedbydefault = false
