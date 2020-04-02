@@ -65,7 +65,7 @@ services:
     # REMOVE this section if you don't want the dashboard/API
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:teamsproxy.cybergate.lk"
+      - "traefik.frontend.rule=Host:cybergate.lk"
       - "traefik.port=8080"
 
 networks:
@@ -73,4 +73,49 @@ networks:
     external: 
 ```
 :pencil: Remember to replace`teamsproxy.cybergate.lk` in `traefik.frontend.rule` if you keep the API.
+
+### Create the the config for Traefik
+
+```
+nano /opt/traefik/traefik.toml
+```
+
+Add  the following contents.
+
+```
+# Change this if needed
+logLevel = "ERROR"
+defaultEntryPoints = ["https","http"]
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+    [entryPoints.http.redirect]
+    entryPoint = "https"
+  [entryPoints.https]
+    address = ":443"
+  [entryPoints.https.tls]
+
+# REMOVE this section if you don't want the dashboard/API
+[api]
+entryPoint = "api"
+dashboard = true
+
+[retry]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "teamsproxy"
+watch = true
+# I prefer to expose my containers explicitly
+exposedbydefault = false
+
+[acme]
+email = "cgadmin@cybergate.lk"
+storage = "acme.json"
+entryPoint = "https"
+OnHostRule = true
+[acme.httpChallenge]
+entryPoint = "http"
+```
 
