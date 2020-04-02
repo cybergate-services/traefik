@@ -65,7 +65,7 @@ services:
     # REMOVE this section if you don't want the dashboard/API
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:cybergate.lk"
+      - "traefik.frontend.rule=Host:teamsproxy.cybergate.lk"
       - "traefik.port=8080"
 
 networks:
@@ -105,7 +105,7 @@ dashboard = true
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "teamsproxy"
+domain = "teamsproxy.cybergate.lk"
 watch = true
 # I prefer to expose my containers explicitly
 exposedbydefault = false
