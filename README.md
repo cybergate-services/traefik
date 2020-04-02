@@ -118,4 +118,10 @@ OnHostRule = true
 [acme.httpChallenge]
 entryPoint = "http"
 ```
+### Deploy Traefik
+
+```
+cd /opt/traefik/
+docker-compose up -d
+```
 
