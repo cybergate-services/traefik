@@ -17,7 +17,7 @@ services:
     # REMOVE this section if you don't want the dashboard/API
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:ctproxy.cybergate.lk"
+      - "traefik.frontend.rule=Host:teamsproxy.cybergate.lk"
       - "traefik.port=8080"
 
 networks:
