@@ -8,9 +8,9 @@ Here I'll show you how to set up Traefik with GUI, http redirection and automati
 
 This guide assumes some general knowledge of Linux and that you have a server available with these services installed:
 
-1. docker
-2. docker-compose
-3. A domain to host your apps on.For cheap and good servers, checkout DigitalOcean or Hetzner
+_ docker
+_ docker-compose
+_ A domain to host your apps on.For cheap and good servers, checkout DigitalOcean or Hetzner
 
 # Setup
 
