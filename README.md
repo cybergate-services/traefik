@@ -24,12 +24,12 @@ You can use following guide to install `docker-comose` on your `CentOS/Ubuntu/Fe
 
 This is based on the official guide but with a few additions. I will show you how to add the web dashboard and API - protected by Basic Auth - mostly because it's fun and secure. If you have no use for it or believe it to be unsafe, you can skip that part.
 
-* First start with creating a network for your web-facing containers to connect to.
+## First start with creating a network for your web-facing containers to connect to.
 ```
 docker network create web
 ````
 
-* Then we create a directory and the necessary files, as sudo if needed.
+## Then we create a directory and the necessary files, as sudo if needed.
 ```
 sudo su -
 mkdir -p /opt/traefik
@@ -37,7 +37,7 @@ touch /opt/traefik/docker-compose.yml
 touch /opt/traefik/acme.json && chmod 600 /opt/traefik/acme.json
 touch /opt/traefik/traefik.toml
 ```
-* Now let's create our `docker-compose.yml` file.
+## Now let's create our `docker-compose.yml` file.
 
 ```
 nano /opt/traefik/docker-compose.yml
