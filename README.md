@@ -72,5 +72,5 @@ networks:
   web:
     external: 
 ```
-memo :pencil:  Remember to replace`teamsproxy.cybergate.lk` in `traefik.frontend.rule` if you keep the API.
+:pencil: Remember to replace`teamsproxy.cybergate.lk` in `traefik.frontend.rule` if you keep the API.
 
